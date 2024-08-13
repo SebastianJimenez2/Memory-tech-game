@@ -1,5 +1,8 @@
+body, html {
+  background-color: var(--color-cuaternario);
+}
+
 .menu-niveles {
-  background-color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7,18 +10,15 @@
 }
 
 .menu-niveles .div {
-  background-color: #ffffff;
-  width: 1440px;
-  height: 972px;
+  width: 100%;
+  height: 100%;
   position: relative;
 }
 
 .menu-niveles .overlap {
   position: absolute;
-  width: 1363px;
-  height: 757px;
-  top: 133px;
-  left: 38px;
+  width: 100%;
+  top: 90px;
   background-color: var(--color-cuaternario);
 }
 
@@ -231,7 +231,7 @@
 
 .menu-niveles .overlap-4 {
   position: absolute;
-  width: 1440px;
+  width: 100%;
   height: 92px;
   top: -2px;
   left: 0;
@@ -275,7 +275,7 @@
 
 .menu-niveles .rectangle-3 {
   position: absolute;
-  width: 1440px;
+  width: 100%;
   height: 92px;
   top: 0;
   left: 0;

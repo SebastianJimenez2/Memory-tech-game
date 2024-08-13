@@ -1,219 +1,26 @@
+header {
+  background-color: var(--color-primario);
+}
+
+header img {
+  width: 180px;
+}
+
+.opciones {
+  background-color: var(--color-terciario);
+  height: 70px;
+}
+
 .juego {
-  background-color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
-}
-
-.juego .div {
-  background-color: #ffffff;
-  width: 1440px;
-  height: 972px;
-  position: relative;
-}
-
-.juego .overlap-group {
-  position: absolute;
-  width: 1363px;
-  height: 757px;
-  top: 134px;
-  left: 38px;
+  height: calc(100vh - 157.68px);
   background-color: var(--color-cuaternario);
-  display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
 }
 
-.juego .image {
-  position: absolute;
-  width: 45px;
-  height: 46px;
-  top: 687px;
-  left: 1303px;
-  object-fit: cover;
-}
-
-.juego .atom-cartas {
-  top: 439px;
-  left: 429px;
-  position: absolute;
-  width: 229px;
-  height: 229px;
-  border-radius: 15px;
-}
-
-.juego .group {
-  position: relative;
-  height: 229px;
-  background-color: var(--color-primario);
-  border-radius: 12px;
-  border: 1px solid;
-  border-color: var(--color-quintenario);
-}
-
-.juego .rectangle {
-  top: 32px;
-  left: -1px;
-  position: absolute;
-  width: 114px;
-  height: 55px;
-  background-color: var(--color-quintenario);
-}
-
-.juego .rectangle-2 {
-  top: 142px;
-  left: 114px;
-  position: absolute;
-  width: 114px;
-  height: 55px;
-  background-color: var(--color-quintenario);
-}
-
-.juego .group-wrapper {
-  top: 170px;
-  left: 706px;
-  position: absolute;
-  width: 229px;
-  height: 229px;
-  border-radius: 15px;
-}
-
-.juego .div-wrapper {
-  top: 170px;
-  left: 429px;
-  position: absolute;
-  width: 229px;
-  height: 229px;
-  border-radius: 15px;
-}
-
-.juego .atom-cartas-2 {
-  top: 439px;
-  left: 707px;
-  position: absolute;
-  width: 229px;
-  height: 229px;
-  border-radius: 15px;
-}
-
-.juego .img {
-  position: absolute;
-  width: 46px;
-  height: 46px;
-  top: 682px;
-  left: 49px;
-  object-fit: cover;
-}
-
-.juego .frame {
-  display: inline-flex;
-  align-items: center;
-  gap: 721px;
-  position: absolute;
-  top: 35px;
-  left: 30px;
-}
-
-.juego .frame-2 {
-  display: inline-flex;
-  align-items: center;
-  gap: 26px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.juego .boton-inicio {
-  display: flex;
-  width: 391px;
-  height: 63px;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 24px;
-  position: relative;
-  background-color: #d9d9d9;
-  border-radius: 8px;
-  box-shadow: var(--button-shadow);
-}
-
-.juego .text-wrapper {
-  position: relative;
-  width: fit-content;
-  margin-top: -3.5px;
-  margin-bottom: -1.5px;
-  margin-left: -18px;
-  margin-right: -18px;
-  font-family: var(--m-nima-negrilla-font-family);
-  font-weight: var(--m-nima-negrilla-font-weight);
-  color: #000000;
-  font-size: var(--m-nima-negrilla-font-size);
-  letter-spacing: var(--m-nima-negrilla-letter-spacing);
-  line-height: var(--m-nima-negrilla-line-height);
-  font-style: var(--m-nima-negrilla-font-style);
-}
-
-.juego .image-2 {
-  position: relative;
-  width: 43px;
-  height: 43px;
-  object-fit: cover;
-}
-
-.juego .frame-3 {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 38px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.juego .token-info {
-  position: relative;
-  width: 43px;
-  height: 43px;
-}
-
-.juego .sound {
-  position: relative;
-  width: 43px;
-  height: 44.02px;
-  background-image: url(./img/token-sound-2.png);
-  background-size: cover;
-  background-position: 50% 50%;
-}
-
-.juego .overlap {
-  position: absolute;
-  width: 1440px;
-  height: 92px;
-  top: -2px;
-  left: 0;
-  background-color: var(--color-primario);
-}
-
-.juego .screenshot {
-  position: absolute;
-  width: 174px;
-  height: 82px;
-  top: 6px;
-  left: 0;
-  object-fit: cover;
-}
-
-.juego .text-wrapper-2 {
-  position: absolute;
-  height: 42px;
-  top: 904px;
-  left: 38px;
-  font-family: var(--normal-font-family);
-  font-weight: var(--normal-font-weight);
-  color: #070707;
-  font-size: var(--normal-font-size);
-  text-align: center;
-  letter-spacing: var(--normal-letter-spacing);
-  line-height: var(--normal-line-height);
-  font-style: var(--normal-font-style);
+.botones-opciones img {
+  height: 40px;
 }
 
 .cartas-grid {
@@ -221,7 +28,10 @@
   flex-wrap: wrap; /* Permite que las cartas se envuelvan en varias filas */
   justify-content: center; /* Centra las cartas en la fila */
   gap: 10px; /* Espacio entre cartas */
-  width: 1000px; /* Ajusta según el diseño general */
+  width: 1500px; /* Ajusta según el diseño general */
+  padding: 20px 0;
+  align-items: center;
+  align-content: center;  
 }
 
 .carta {
@@ -315,4 +125,23 @@
 
 .popup-contenido button:hover {
   background-color: var(--color-secundario);
+}
+
+.opciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 20px;
+}
+
+.timer {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.botones-opciones img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 5px;
 }

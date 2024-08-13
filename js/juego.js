@@ -4,18 +4,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const nivel = urlParams.get('nivel');
 
         let numCartas;
+        let tiempoInicial;
         switch (nivel) {
                 case 'principiante':
-                        numCartas = 4;
+                        numCartas = 8;
+                        tiempoInicial = 5 * 60 * 1000; // 5 minutos en milisegundos
                         break;
                 case 'intermedio':
-                        numCartas = 8;
+                        numCartas = 16;
+                        tiempoInicial = 3 * 60 * 1000; // 3 minutos en milisegundos
                         break;
                 case 'avanzado':
-                        numCartas = 16;
+                        numCartas = 32;
+                        tiempoInicial = 1 * 60 * 1000; // 1 minuto en milisegundos
                         break;
                 default:
-                        numCartas = 4;
+                        numCartas = 8;
+                        tiempoInicial = 5 * 60 * 1000; // Valor predeterminado
         }
 
         const cartas = generarCartas(numCartas);
@@ -25,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         inicializarJuego();
+
+        // Configurar el temporizador
+        if (window.setTiempoInicial) {
+                window.setTiempoInicial(tiempoInicial);
+        }
 
         function generarCartas(num) {
                 const cartas = [];
@@ -116,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const botonCerrar = document.getElementById('cerrar-popup');
                         botonCerrar.addEventListener('click', () => {
                                 popup.style.display = 'none'; // Ocultar el pop-up al hacer clic en "Cerrar"
+                                window.location.href = 'niveles.html'; 
                         });
                 }
 
