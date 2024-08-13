@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         switch (nivel) {
                 case 'principiante':
                         numCartas = 8;
-                        tiempoInicial = 5 * 60 * 1000; // 5 minutos en milisegundos
+                        tiempoInicial = 1 * 60 * 1000; // 1 minuto en milisegundos
                         break;
                 case 'intermedio':
                         numCartas = 16;
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         break;
                 case 'avanzado':
                         numCartas = 32;
-                        tiempoInicial = 1 * 60 * 1000; // 1 minuto en milisegundos
+                        tiempoInicial = 5 * 60 * 1000; // 5 minutos en milisegundos
                         break;
                 default:
                         numCartas = 8;
