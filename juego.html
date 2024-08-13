@@ -9,35 +9,33 @@
 </head>
 
 <body>
-  <div class="juego">
-    <div class="div">
-      <div class="overlap-group">
-        <img class="image" src="img/image-7.png" />
-        <div class="cartas-grid" id="cartas-grid">
-          <!-- Las cartas estarán dentro de este contenedor -->
+  <header>
+    <img class="screenshot" src="img/screenshot-2024-06-15-120359-removebg-preview-1.png" />
+  </header>
 
-        </div>
-        <img class="img" src="img/image-23.png" />
-        <div class="frame">
-          <div class="frame-2">
-            <div class="boton-inicio">
-              <div class="text-wrapper">Tiempo restante 05:00</div>
-            </div>
-            <img class="image-2" src="img/image-6.png" />
-          </div>
-          <div class="frame-3">
-            <img class="token-info" src="img/token-info.svg" />
-            <div class="sound"></div>
-          </div>
-        </div>
-      </div>
-      <div class="overlap">
-        <img class="screenshot" src="img/screenshot-2024-06-15-120359-removebg-preview-1.png" />
-      </div>
-      <div class="text-wrapper-2">Reportar problema</div>
+  <div class="opciones">
+    <div class="timer">
+      05:00
+    </div>
+
+    <div class="botones-opciones">
+      <img src="img/informacion.png" id="reiniciar" />
+      <img src="img/reporte.png" id="sonido" />
+      <img src="img/token-sound-2.png" id="pausa" />
     </div>
   </div>
 
+  <div class="juego">
+    <!-- pantalla para la visualizacion de cartas -->
+
+    <div class="cartas-grid" id="cartas-grid">
+      <!-- Las cartas estarán dentro de este contenedor -->
+
+    </div>
+
+  </div>
+
+  <!-- Pop-up para felicitar -->
   <div id="popup-felicitaciones" class="popup">
     <div class="popup-contenido">
       <h2>¡Felicidades!</h2>
@@ -46,8 +44,17 @@
     </div>
   </div>
 
+  <!-- Pop-up para mostrar cuando el tiempo se haya agotado -->
+  <div id="popup-tiempo-agotado" class="popup">
+    <div class="popup-contenido">
+      <p>¡Se acabó el tiempo!</p>
+      <button id="cerrar-popup-tiempo">Cerrar</button>
+    </div>
+  </div>
+
   <!-- Agrega tu script al final del body -->
-  <script src="js/juego.js"></script>
+  <script src="js/juego.js"> </script>
+  <script src="js/timer.js"> </script>
 </body>
 
 </html>
