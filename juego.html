@@ -18,7 +18,7 @@
   </header>
 
   <div class="opciones">
-    <div class="timer" tabindex="2">05:00</div>
+    <div class="timer" id="timer" tabindex="2">05:00</div>
 
     <div class="botones-opciones">
       <button id="pausa" tabindex="3" role="button" aria-label="Pausar/Reanudar juego">
@@ -40,12 +40,9 @@
     <!-- pantalla para la visualizacion de cartas -->
     <div class="cartas-grid" id="cartas-grid">
       <!-- Las cartas estarán dentro de este contenedor -->
-      
     </div>
   </div>
 
-
-  
   <!-- Mensaje de pausa -->
   <div id="mensaje-pausa" class="mensaje-pausa" style="display: none;" role="alert" aria-live="assertive">
     <p>El juego está en pausa. Haz clic en el ícono de play para reanudar.</p>

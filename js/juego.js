@@ -94,10 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         soundOn = !soundOn;
                         if (soundOn) {
                                 bgMusic.play();
-                                soundIcon.src = 'img/sound-icon.png';
+                                soundIcon.querySelector('img').src = 'img/sound-icon.png'; // Cambia el ícono a activo
                         } else {
                                 bgMusic.pause();
-                                soundIcon.src = 'img/sound-muted-icon.png';
+                                soundIcon.querySelector('img').src = 'img/sound-muted-icon.png'; // Cambia el ícono a silenciado
                         }
                 }
 
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 function pausarJuego() {
                         juegoPausado = true;
-                        pausaButton.src = 'img/play-icon.png';
+                        pausaButton.querySelector('img').src = 'img/play-icon.png'; // Cambia el ícono a play (pausado)
                         mensajePausa.style.display = 'block';
                         if (window.pauseTimer) {
                                 window.pauseTimer();
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 function reanudarJuego() {
                         juegoPausado = false;
-                        pausaButton.src = 'img/pause-icon.png';
+                        pausaButton.querySelector('img').src = 'img/pause-icon.png'; // Cambia el ícono a pausa (reanudar)
                         mensajePausa.style.display = 'none';
                         if (window.resumeTimer) {
                                 window.resumeTimer();
@@ -244,12 +244,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         const popup = document.getElementById('popup-pareja');
                         const popupTitulo = document.getElementById('popup-pareja-titulo');
                         const popupMensaje = document.getElementById('popup-mensaje');
-                        const cerrarPopup = document.getElementById('cerrar-popup-pareja');
+                        popup.style.display = 'flex';
 
                         switch (parejaId) {
                                 case '1':
                                         popupTitulo.innerText = '¡Teclado encontrado!';
-                                        popupMensaje.innerText = '¡Excelente! Has encontrado la pareja del teclado. Es el dispositivo principal para introducir datos en tu computadora, para volver al juego también puedes usar la tecla [ESC]';
+                                        popupMensaje.innerText = '¡Buen trabajo! Has encontrado la pareja del teclado. Es el dispositivo que utilizas para escribir en tu computadora, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
                                 case '2':
                                         popupTitulo.innerText = '¡Mouse encontrado!';
@@ -317,13 +317,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                         break;
                         }
 
-                        popup.style.display = 'flex';
+                        popupPareja.style.display = 'flex';
 
                         if (window.pauseTimer) {
                                 window.pauseTimer();
                         }
 
-                        cerrarPopup.focus();
+                        cerrarPopupPareja.focus();
                 }
 
                 // Añadir los eventos de clic y teclado a las cartas
