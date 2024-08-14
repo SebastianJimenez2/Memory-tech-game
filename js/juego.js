@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const cerrarReportar = document.getElementById('cerrar-reportar');
         const formReportar = document.getElementById('form-reportar');
 
+        const botonInfo = document.getElementById('informacion');
+        const popupInfo = document.getElementById('popup-info');
+        const cerrarInfo = document.getElementById('cerrar-info');
+
 
         let numCartas;
         let tiempoInicial;
@@ -233,9 +237,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const descripcion = document.getElementById('descripcion').value;
 
-                // Aquí puedes agregar código para guardar la información en un archivo
-                // Para un entorno real, necesitarías enviar esta información a un servidor
-
                 console.log('Descripción del problema:', descripcion);
 
                 // Limpiar el formulario y cerrar el pop-up
@@ -243,7 +244,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 popupReportar.style.display = 'none';
 
                 alert('Gracias por tu reporte. Nuestro equipo lo revisará pronto.');
-        });                
+        });
+        
+        // Mostrar el pop-up de información al presionar el ícono
+        botonInfo.addEventListener('click', () => {
+                popupInfo.style.display = 'flex';
+        });
+
+        // Cerrar el pop-up de información
+        cerrarInfo.addEventListener('click', () => {
+                popupInfo.style.display = 'none';
+        });
+
 
                 cartas.forEach(carta => carta.addEventListener('click', voltearCarta));
                 cartas.forEach((carta,index) => carta.setAttribute('tabindex',index+2));
