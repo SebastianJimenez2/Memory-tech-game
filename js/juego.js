@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const nivel = urlParams.get('nivel');
 
+        const bgMusic = document.getElementById('bg-music');
+        const soundIcon = document.getElementById('sonido');
+        let soundOn = false;
+
+
         let numCartas;
         let tiempoInicial;
         switch (nivel) {
@@ -70,6 +75,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 let bloqueoTablero = false;
                 let parejasEncontradas = 0;
                 const totalParejas = numCartas / 2;
+
+                // Función para alternar el estado del sonido
+                function toggleSound() {
+                        soundOn = !soundOn;
+                        if (soundOn) {
+                        bgMusic.play();
+                        soundIcon.src = 'img/sound-icon.png'; // Ícono de sonido activado
+                        } else {
+                        bgMusic.pause();
+                        soundIcon.src = 'img/sound-muted-icon.png'; // Ícono de sonido desactivado
+                        }
+                }
+
+                soundIcon.addEventListener('click', toggleSound);
+
+                function reproducirSonido(tipo) {
+                        if (soundOn) {
+                        if (tipo === 'correct') {
+                                correctSound.play();
+                        } else if (tipo === 'incorrect') {
+                                incorrectSound.play();
+                        }
+                        }
+                }
+
+
 
                 function voltearCarta() {
                         if (bloqueoTablero) return;

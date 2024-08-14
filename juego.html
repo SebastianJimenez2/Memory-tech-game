@@ -1,64 +1,69 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <title>¡Empieza el juego!</title>
-  <link rel="icon" href="img/iconPage.png">
-  <link rel="stylesheet" href="css/globals.css" />
-  <link rel="stylesheet" href="css/styleguide.css" />
-  <link rel="stylesheet" href="css/juego_style.css" />
-</head>
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>¡Empieza el juego!</title>
+    <link rel="icon" href="img/iconPage.png">
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/styleguide.css" />
+    <link rel="stylesheet" href="css/juego_style.css" />
+  </head>
 
-<body>
-  <header>
-    <a href="index.html">
-      <img class="screenshot" src="img/logoTechSecundario.png" alt="Logo del juego." title="Logo del juego." tabindex="1" onkeypress="presionarConTeclado(event, 'index.html')" />
-    </a>
-  </header>
+  <body>
+    <header>
+      <a href="index.html">
+        <img class="screenshot" src="img/logoTechSecundario.png" alt="Logo del juego." title="Logo del juego." tabindex="1" onkeypress="presionarConTeclado(event, 'index.html')" />
+      </a>
+    </header>
 
-  <div class="opciones">
-    <div class="timer">
-      05:00
+    <div class="opciones">
+      <div class="timer">
+        05:00
+      </div>
+
+      <div class="botones-opciones">
+        <img src="img/informacion.png" id="informacion" />
+        <img src="img/reporte.png" id="reporte" />
+        <img src="img/sound-muted-icon.png" id="sonido" />
+      </div>
     </div>
 
-    <div class="botones-opciones">
-      <img src="img/informacion.png" id="reiniciar" />
-      <img src="img/reporte.png" id="sonido" />
-      <img src="img/token-sound-2.png" id="pausa" />
-    </div>
-  </div>
+    <div class="juego">
+      <!-- pantalla para la visualizacion de cartas -->
 
-  <div class="juego">
-    <!-- pantalla para la visualizacion de cartas -->
+      <div class="cartas-grid" id="cartas-grid">
+        <!-- Las cartas estarán dentro de este contenedor -->
 
-    <div class="cartas-grid" id="cartas-grid">
-      <!-- Las cartas estarán dentro de este contenedor -->
+      </div>
 
     </div>
 
-  </div>
-
-  <!-- Pop-up para felicitar -->
-  <div id="popup-felicitaciones" class="popup">
-    <div class="popup-contenido">
-      <h2>¡Felicidades!</h2>
-      <p>Has encontrado todas las parejas.</p>
-      <button id="cerrar-popup" class="button-focus-two" title="Cerrar pop up" tabindex="40" role="button">Cerrar</button>
+    <!-- Pop-up para felicitar -->
+    <div id="popup-felicitaciones" class="popup">
+      <div class="popup-contenido">
+        <h2>¡Felicidades!</h2>
+        <p>Has encontrado todas las parejas.</p>
+        <button id="cerrar-popup" class="button-focus-two" title="Cerrar pop up" tabindex="40" role="button">Cerrar</button>
+      </div>
     </div>
-  </div>
 
-  <!-- Pop-up para mostrar cuando el tiempo se haya agotado -->
-  <div id="popup-tiempo-agotado" class="popup">
-    <div class="popup-contenido">
-      <p>¡Se acabó el tiempo!</p>
-      <button id="cerrar-popup-tiempo" class="button-focus-two" title="Cerrar pop up" tabindex="41" role="button">Cerrar</button>
+    <!-- Pop-up para mostrar cuando el tiempo se haya agotado -->
+    <div id="popup-tiempo-agotado" class="popup">
+      <div class="popup-contenido">
+        <p>¡Se acabó el tiempo!</p>
+        <button id="cerrar-popup-tiempo" class="button-focus-two" title="Cerrar pop up" tabindex="41" role="button">Cerrar</button>
+      </div>
     </div>
-  </div>
 
-  <!-- Agrega tu script al final del body -->
-  <script src="js/juego.js"> </script>
-  <script src="js/timer.js"> </script>
-  <script src="js/global.js"> </script>
-</body>
+    <!-- Agrega tu script al final del body -->
+    <script src="js/juego.js"> </script>
+    <script src="js/timer.js"> </script>
+    <script src="js/global.js"> </script>
 
-</html>
+    <!-- Agrega los elementos de audio -->
+    <audio id="bg-music" loop>
+      <source src="sounds/LostWoods-LegendOfZelda.mp3" type="audio/mpeg">
+    </audio>
+  </body>
+
+  </html>
