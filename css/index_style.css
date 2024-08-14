@@ -26,7 +26,7 @@ html, body {
   position: absolute;
   width: 886px;
   height: 145px;
-  top: 586px;
+  top: 540px;
   left: 238px;
   font-family: var(--m-nima-font-family);
   font-weight: var(--m-nima-font-weight);
@@ -68,6 +68,7 @@ html, body {
 
 .inicio .div-wrapper {
   position: relative;
+  margin-top: 10%;
   width: 240px;
   height: 82px;
   background-color: var(--negro);
