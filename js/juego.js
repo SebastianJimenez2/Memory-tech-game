@@ -323,11 +323,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Mostrar el pop-up
                 botonReportar.addEventListener('click', () => {
+                        // Pausar el temporizador cuando se muestra el pop-up
+                        if (window.pauseTimer) {
+                                window.pauseTimer();
+                        }
+
                         popupReportar.style.display = 'flex';
                 });
 
                 // Cerrar el pop-up
                 cerrarReportar.addEventListener('click', () => {
+                        if (window.resumeTimer) {
+                                window.resumeTimer();
+                        }
+
                         popupReportar.style.display = 'none';
                 });
 
@@ -348,12 +357,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Mostrar el pop-up de información al presionar el ícono
                 botonInfo.addEventListener('click', () => {
+                        if (window.pauseTimer) {
+                                window.pauseTimer();
+                        }
+                        
                         popupInfo.style.display = 'flex';
                 });
 
                 // Cerrar el pop-up de información
                 cerrarInfo.addEventListener('click', () => {
                         popupInfo.style.display = 'none';
+
+                        if (window.resumeTimer) {
+                                window.resumeTimer();
+                        }
                 });
 
 
