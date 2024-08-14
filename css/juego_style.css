@@ -194,6 +194,10 @@ textarea {
   box-sizing: border-box;
 }
 
+label {
+  color: #fff;
+}
+
 .button-focus-two {
   background: #007bff;
   color: #fff;
