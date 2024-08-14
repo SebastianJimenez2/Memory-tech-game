@@ -81,7 +81,6 @@ header img {
   visibility: hidden; /* Ocultar las cartas que ya han sido emparejadas */
 }
 
-/* Pop-up */
 .popup {
   display: none; /* Oculto por defecto */
   position: fixed;
@@ -96,35 +95,51 @@ header img {
 }
 
 .popup-contenido {
-  background-color: #fff;
+  background-color: var(--color-primario);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 800px;
+}
+
+.popup-contenido-texto {
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #fff;
 }
 
 .popup-contenido h2 {
-  margin: 0;
-  margin-bottom: 10px;
+  margin: 10px 0px 10px 0;
+  font: var(--titulo-2-font-family);
+  font-weight: var(--titulo-2-font-weight);
+  font-size: var(--titulo-2-font-size);
+  color: #fff;
 }
 
 .popup-contenido p {
-  margin: 0;
-  margin-bottom: 20px;
+  font: var(--m-nima-font-family);
+  font-weight: var(--m-nima-font-weight);
+  font-size: var(--m-nima-font-size);
+  color: #000;
 }
 
 .popup-contenido button {
   padding: 10px 20px;
-  background-color: var(--color-primario);
-  color: #fff;
+  background-color: var(--verde);
+  
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font: var(--m-nima-negrilla-font-family);
+  font-weight: var(--m-nima-negrilla-font-weight);
+  font-size: var(--m-nima-negrilla-font-size);
+  color: #000;
 }
 
 .popup-contenido button:hover {
-  background-color: var(--color-secundario);
+  background-color: var(--verde-hoover  );
 }
 
 .opciones {

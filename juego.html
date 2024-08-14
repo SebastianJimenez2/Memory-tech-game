@@ -1,67 +1,75 @@
-  <!DOCTYPE html>
-  <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>¡Empieza el juego!</title>
-    <link rel="icon" href="img/iconPage.png">
-    <link rel="stylesheet" href="css/globals.css" />
-    <link rel="stylesheet" href="css/styleguide.css" />
-    <link rel="stylesheet" href="css/juego_style.css" />
-  </head>
+<!DOCTYPE html>
+<html lang="es">
 
-  <body>
-    <header>
-      <a href="index.html">
-        <img class="screenshot" src="img/logoTechSecundario.png" alt="Logo del juego." title="Logo del juego." tabindex="1" onkeypress="presionarConTeclado(event, 'index.html')" />
-      </a>
-    </header>
+<head>
+  <meta charset="utf-8" />
+  <title>¡Empieza el juego!</title>
+  <link rel="icon" href="img/iconPage.png">
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/styleguide.css" />
+  <link rel="stylesheet" href="css/juego_style.css" />
+</head>
 
-    <div class="opciones">
-      <div class="timer">
-        05:00
-      </div>
+<body>
+  <header>
+    <a href="index.html">
+      <img class="screenshot" src="img/logoTechSecundario.png" alt="Logo del juego." title="Logo del juego."
+        tabindex="1" onkeypress="presionarConTeclado(event, 'index.html')" />
+    </a>
+  </header>
 
-      <div class="botones-opciones">
-        <img src="img/pause-icon.png" id="pausa" />
-        <img src="img/informacion.png" id="informacion" />
-        <img src="img/reporte.png" id="reportar" />
-        <img src="img/sound-muted-icon.png" id="sonido" />
-      </div>
+  <div class="opciones">
+    <div class="timer">
+      05:00
     </div>
 
-    <div class="juego">
-      <!-- pantalla para la visualizacion de cartas -->
+    <div class="botones-opciones">
+      <img src="img/pause-icon.png" id="pausa" />
+      <img src="img/informacion.png" id="informacion" />
+      <img src="img/reporte.png" id="reportar" />
+      <img src="img/sound-muted-icon.png" id="sonido" />
+    </div>
+  </div>
 
-      <div class="cartas-grid" id="cartas-grid">
-        <!-- Las cartas estarán dentro de este contenedor -->
-
-      </div>
+  <div class="juego">
+    <!-- pantalla para la visualizacion de cartas -->
+    <div class="cartas-grid" id="cartas-grid">
+      <!-- Las cartas estarán dentro de este contenedor -->
 
     </div>
+  </div>
 
-    <!-- Pop-up para felicitar -->
-    <div id="popup-felicitaciones" class="popup">
-      <div class="popup-contenido">
-        <h2>¡Felicidades!</h2>
+
+
+  <!-- Mensaje de pausa -->
+  <div id="mensaje-pausa" class="mensaje-pausa" style="display: none;">
+    <p>El juego está en pausa. Haz clic en el ícono de play para reanudar.</p>
+  </div>
+
+  <!-- Pop-up para felicitar -->
+  <div id="popup-felicitaciones" class="popup">
+    <div class="popup-contenido">
+      <h2>¡Felicidades!</h2>
+      <div class="popup-contenido-texto"> 
         <p>Has encontrado todas las parejas.</p>
-        <button id="cerrar-popup" class="button-focus-two" title="Cerrar pop up" tabindex="40" role="button">Cerrar</button>
       </div>
+      <button id="cerrar-popup" class="button-focus-two" title="Cerrar pop up" tabindex="40" role="button">Cerrar</button>
     </div>
+  </div>
 
-    <!-- Pop-up para mostrar cuando el tiempo se haya agotado -->
-    <div id="popup-tiempo-agotado" class="popup">
-      <div class="popup-contenido">
-        <p>¡Se acabó el tiempo!</p>
-        <button id="cerrar-popup-tiempo" class="button-focus-two" title="Cerrar pop up" tabindex="41" role="button">Cerrar</button>
+  <!-- Pop-up para mostrar cuando el tiempo se haya agotado -->
+  <div id="popup-tiempo-agotado" class="popup">
+    <div class="popup-contenido">
+      <h2>¡Tiempo Agotado!</h2>
+      <div class="popup-contenido-texto"> 
+        <p>¡Se acabó el tiempo! Pero no te preocupes, puedes volver a intentarlo</p>
       </div>
+      <button id="cerrar-popup-tiempo" class="button-focus-two" title="Cerrar pop up" tabindex="41"
+        role="button">Cerrar</button>
     </div>
+  </div>
 
-    <!-- Mensaje de pausa -->
-    <div id="mensaje-pausa" class="mensaje-pausa" style="display: none;">
-      <p>El juego está en pausa. Haz clic en el ícono de play para reanudar.</p>
-    </div>
-
-    <!-- Pop up para repotar un problema -->
+  <!-- Pop up para repotar un problema -->
   <div id="popup-reportar" class="popup">
     <div class="popup-contenido">
       <h2>Reportar Problema</h2>
@@ -74,24 +82,40 @@
     </div>
   </div>
 
-    <!-- Pop-up para mostrar información del juego -->
-    <div id="popup-info" class="popup">
-      <div class="popup-contenido">
-          <h2>Información del Juego</h2>
-          <p>Este es un juego de memoria en el que debes encontrar parejas de cartas. Cada vez que encuentres una pareja correcta, se te mostrará un mensaje. Tienes un tiempo limitado para encontrar todas las parejas. ¡Buena suerte!</p>
-          <button id="cerrar-info" class="button-focus-two" title="Cerrar pop up"  role="button">Cerrar</button>
+  <!-- Pop-up para mostrar información del juego -->
+  <div id="popup-info" class="popup">
+    <div class="popup-contenido">
+      <h2>Información del Juego</h2>
+      <div class="popup-contenido-texto"> 
+        <p>Este es un juego de memoria en el que debes encontrar parejas de cartas. Cada vez que encuentres una pareja
+          correcta, se te mostrará un mensaje. Tienes un tiempo limitado para encontrar todas las parejas. ¡Buena suerte!
+        </p>
       </div>
+      <button id="cerrar-info" class="button-focus-two" title="Cerrar pop up" role="button">Cerrar</button>
     </div>
+  </div>
 
-    <!-- Agrega tu script al final del body -->
-    <script src="js/juego.js"> </script>
-    <script src="js/timer.js"> </script>
-    <script src="js/global.js"> </script>
+  <!-- Pop-up para mostrar la retroalimentación de las parejas -->
+  <div id="popup-pareja" class="popup">
+    <div class="popup-contenido">
+      <h2 id="popup-titulo">¡Pareja Encontrada!</h2>
+      <div class="popup-contenido-texto"> 
+        <p id="popup-mensaje">¡Bien hecho!</p>  
+      </div>
+      <button id="cerrar-popup-pareja" class="button-focus-two" title="Cerrar pop up" tabindex="42"
+        role="button">Cerrar</button>
+    </div>
+  </div>
 
-    <!-- Agrega los elementos de audio -->
-    <audio id="bg-music" loop>
-      <source src="sounds/LostWoods-LegendOfZelda.mp3" type="audio/mpeg">
-    </audio>
-  </body>
+  <!-- Agrega tu script al final del body -->
+  <script src="js/juego.js"> </script>
+  <script src="js/timer.js"> </script>
+  <script src="js/global.js"> </script>
 
-  </html>
+  <!-- Agrega los elementos de audio -->
+  <audio id="bg-music" loop>
+    <source src="sounds/LostWoods-LegendOfZelda.mp3" type="audio/mpeg">
+  </audio>
+</body>
+
+</html>

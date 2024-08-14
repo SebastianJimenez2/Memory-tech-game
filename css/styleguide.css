@@ -6,6 +6,8 @@
   --color-quintenario: rgba(253, 191, 92, 1);
   --gris: rgba(219, 219, 219, 1);
   --negro: rgba(26, 23, 26, 1);
+  --verde: rgb(157, 215, 148, 1);
+  --verde-hoover: rgb(112, 251, 94);
   --titulo-1-font-family: "Roboto Mono", Helvetica;
   --titulo-1-font-weight: 400;
   --titulo-1-font-size: 40px;
@@ -26,7 +28,7 @@
   --normal-font-style: normal;
   --m-nima-font-family: "Roboto Mono", Helvetica;
   --m-nima-font-weight: 400;
-  --m-nima-font-size: 24px;
+  --m-nima-font-size: 16px;
   --m-nima-letter-spacing: 0px;
   --m-nima-line-height: normal;
   --m-nima-font-style: normal;
@@ -50,7 +52,7 @@
   --normal-negrilla-font-style: normal;
   --m-nima-negrilla-font-family: "Roboto Mono", Helvetica;
   --m-nima-negrilla-font-weight: 700;
-  --m-nima-negrilla-font-size: 30px;
+  --m-nima-negrilla-font-size: 14px;
   --m-nima-negrilla-letter-spacing: 0px;
   --m-nima-negrilla-line-height: normal;
   --m-nima-negrilla-font-style: normal;
