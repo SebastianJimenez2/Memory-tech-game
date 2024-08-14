@@ -347,12 +347,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         const descripcion = document.getElementById('descripcion').value;
 
                         console.log('Descripción del problema:', descripcion);
-
+                        
                         // Limpiar el formulario y cerrar el pop-up
                         formReportar.reset();
                         popupReportar.style.display = 'none';
 
+                        if (window.resumeTimer) {
+                                window.resumeTimer();
+                        } 
                         alert('Gracias por tu reporte. Nuestro equipo lo revisará pronto.');
+
+                        
                 });
 
                 // Mostrar el pop-up de información al presionar el ícono
