@@ -1,54 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    
-    <title>Dificultad</title>
-    <link rel="icon" href="img/iconPage.png">
-    <link rel="stylesheet" href="css/globals.css" />
-    <link rel="stylesheet" href="css/styleguide.css" />
-    <link rel="stylesheet" href="css/niveles_style.css" />
-  </head>
-  <body>
-    <div class="menu-niveles">
-      <div class="div">
-        <div class="overlap">
-          <div class="text-wrapper" >Principiante</div>
-          <div class="text-wrapper-2" >Intermedio</div>
-          <div class="text-wrapper-3" >Avanzado</div>
-          
-      
-          <p class="p" tabindex="2">Elige un nivel para empezar</p>
-          <p class="text-wrapper-4" tabindex="6">
-            La complejidad de los niveles aumenta según su dificultad, elige la que prefieras.
-          </p>
-          <div class="group button-focus" id="principiante" tabindex="3" role="button" onkeypress="presionarConTeclado(event, 'juego.html?nivel=principiante')" title="Iniciar el juego en dificultad principiante." aria-label="Iniciar el juego en dificultad principiante." >
-            <img class="image-2" src="img/nivel1.png" aria-label="Seleccionar dificultad fácil." />
-          </div>
-          <div class="group-2 button-focus" id="intermedio"  tabindex="4" role="button" onkeypress="presionarConTeclado(event, 'juego.html?nivel=intermedio')" title="Iniciar el juego en dificultad intermedia." aria-label="Iniciar el juego en dificultad intermedia.">
-            <img class="image-2" src="img/nivel2.png" aria-label="Seleccionar dificultad intermedia."/>
-          </div>
-          <div class="group-3 button-focus" id="avanzado"  tabindex="5" role="button" onkeypress="presionarConTeclado(event, 'juego.html?nivel=avanzado')" title="Iniciar el juego en dificultad avanzada." aria-label="Iniciar el juego en dificultad avanzada." >
-            <img class="image-2" src="img/nivel3.png" aria-label="Seleccionar dificultad avanzada."/>
-          </div>
 
-          <div class="sound"></div>
-        </div>
-        <div class="overlap-4">
-          <div class="component">
-            <div class="overlap-group-2">
-              <img class="line" src="img/line-1-1.svg" /> <img class="line-2" src="img/line-2-1.svg" />
-            </div>
+<head>
+  <meta charset="utf-8" />
+
+  <title>Dificultad</title>
+  <link rel="icon" href="img/iconPage.png">
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/styleguide.css" />
+  <link rel="stylesheet" href="css/niveles_style.css" />
+</head>
+
+<body>
+  <header>
+    <a href="index.html">
+      <img class="screenshot-2" src="img/logoTechSecundario.png" alt="Logo del juego." title="Logo del juego."
+        tabindex="1" />
+    </a>
+  </header>
+
+  <div class="contenido-niveles">
+    <div class="panel">
+      <div class="contenido-niveles-texto">
+        <p tabindex="2">Elige un nivel para empezar</p>
+      </div>
+
+      <div class="niveles">
+        <div class="boton-principiante">
+          <div class="boton-nivel button-focus" id="principiante" tabindex="3" role="button"
+            onkeypress="presionarConTeclado(event, 'juego.html?nivel=principiante')"
+            title="Iniciar el juego en dificultad principiante."
+            aria-label="Iniciar el juego en dificultad principiante.">
+            <img class="image-nivel" src="img/nivel1.png" aria-label="Seleccionar dificultad fácil." />
           </div>
-          <div class="rectangle-3"></div>
-          <a href="index.html">
-            <img class="screenshot" src="img/logoTechSecundario.png" alt="Logo del juego." title="Logo del juego." tabindex="1" onkeypress="presionarConTeclado(event, 'index.html')" />
-          </a>
+          <div class="text-wrapper">Principiante</div>
         </div>
+
+        <div class="boton-intermedio">
+          <div class="boton-nivel button-focus" id="intermedio" tabindex="4" role="button"
+            onkeypress="presionarConTeclado(event, 'juego.html?nivel=intermedio')"
+            title="Iniciar el juego en dificultad intermedia." aria-label="Iniciar el juego en dificultad intermedia.">
+            <img class="image-nivel" src="img/nivel2.png" aria-label="Seleccionar dificultad intermedia." />
+          </div>
+          <div class="text-wrapper">Intermedio</div>
+        </div>
+
+        <div class="boton-avanzado">
+          <div class="boton-nivel button-focus" id="avanzado" tabindex="5" role="button"
+            onkeypress="presionarConTeclado(event, 'juego.html?nivel=avanzado')"
+            title="Iniciar el juego en dificultad avanzada." aria-label="Iniciar el juego en dificultad avanzada.">
+            <img class="image-nivel" src="img/nivel3.png" aria-label="Seleccionar dificultad avanzada." />
+          </div>
+          <div class="text-wrapper">Avanzado</div>
+        </div>
+      </div>
+
+      <div class="contenido-niveles-footer">
+        <p class="text-wrapper-2  " tabindex="6">
+          La complejidad de los niveles aumenta según su dificultad, elige la que prefieras.
+        </p>
       </div>
     </div>
 
-    <script src="js/niveles.js"></script>
-    <script src="js/global.js"></script>
-  </body>
+  </div>
+
+  <script src="js/niveles.js"></script>
+  <script src="js/global.js"></script>
+</body>
+
 </html>

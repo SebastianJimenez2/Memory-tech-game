@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Memory Tech: Inicio</title>
-    <link rel="icon" href="img/iconPage.png">
-    <link rel="stylesheet" href="css/globals.css" />
-    <link rel="stylesheet" href="css/styleguide.css" />
-    <link rel="stylesheet" href="css/index_style.css" />
-  </head>
-  <body>
-    <div class="inicio">
-      <div class="div">
-        <div class="overlap">
-          <p class="text-wrapper" tabindex="4">
-            En este juego deberás encontrar los pares de los componentes informáticos para ganar. ¡Hazlo en el menor
-            tiempo posible!
-          </p>
-          <div class="overlap-2">
-            <div class="overlap-wrapper">
-              <div id="iniciarBtn" class="div-wrapper button-focus" aria-label="Botón para iniciar." tabindex="3" role="button" onkeypress="presionarConTeclado(event, 'niveles.html')" title="Botón para iniciar.">
-                <div class="text-wrapper-3" >Iniciar</div>
-              </div>
-            </div>
-            <img class="screenshot" src="img/logoTechPrincipal.png" alt="Juego Memory Tech" title="Juego Memory Tech" tabindex="2"/>
-          </div>
-          <div class="sound"></div>
-        </div>
-        <div class="overlap-3">
-          <div class="component">
-            <div class="overlap-group-2">
-              <img class="line" src="img/line-1-1.svg" /> <img class="img" src="img/line-2-1.svg" />
-            </div>
-          </div>
-          <div class="rectangle"></div>
-          <a href="index.html">
-            <img class="screenshot-2" src="img/logoTechSecundario.png" alt="Logo del juego." title="Logo del juego." tabindex="1"  />
-          </a>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Memory Tech: Inicio</title>
+  <link rel="icon" href="img/iconPage.png">
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/styleguide.css" />
+  <link rel="stylesheet" href="css/index_style.css" />
+</head>
+
+<body>
+  <header>
+    <a href="index.html">
+      <img class="screenshot-2" src="img/logoTechSecundario.png" alt="Logo del juego." title="Logo del juego."
+        tabindex="1" />
+    </a>
+  </header>
+
+  <div class="contenido">
+    <div class="panel">
+      <div class="logo">
+        <img class="screenshot" src="img/logoTechPrincipal.png" alt="Juego Memory Tech" title="Juego Memory Tech"
+          tabindex="2" />
+      </div>
+
+      <div class="panel-opciones">
+        <div id="iniciarBtn" class="iniciarBtn button-focus" aria-label="Botón para iniciar." tabindex="3" role="button"
+          onkeypress="presionarConTeclado(event, 'niveles.html')" title="Botón para iniciar.">
+          <div class="text-wrapper-3">Iniciar</div>
         </div>
       </div>
-    </div>
 
-    <!-- Añadir el archivo JavaScript -->
-    <script src="js/index.js"></script>
-    <script src="js/global.js"></script>
-  </body>
+      <div class="texto-panel">
+        <p class="text-wrapper" tabindex="4">
+          En este juego deberás encontrar los pares de los componentes informáticos para ganar. ¡Hazlo en el menor
+          tiempo posible!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Añadir el archivo JavaScript -->
+  <script src="js/index.js"></script>
+  <script src="js/global.js"></script>
+</body>
+
 </html>
