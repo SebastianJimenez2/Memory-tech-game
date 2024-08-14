@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const bgMusic = document.getElementById('bg-music');
         const soundIcon = document.getElementById('sonido');
+        const pausaButton = document.getElementById('pausa');
+        const mensajePausa = document.getElementById('mensaje-pausa');
         let soundOn = false;
+        let juegoPausado = false;
 
 
         let numCartas;
@@ -180,6 +183,34 @@ document.addEventListener('DOMContentLoaded', () => {
                         }, 2000); // El mensaje se mostrará durante 2 segundos
                 }
 
+                        // Manejar la pausa y reanudación del juego
+                pausaButton.addEventListener('click', () => {
+                        if (juegoPausado) {
+                                reanudarJuego();
+                        } else {
+                                pausarJuego();
+                        }
+                });
+
+                function pausarJuego() {
+                        juegoPausado = true;
+                        pausaButton.src = 'img/play-icon.png'; // Cambiar el ícono para mostrar que el juego está pausado
+                        mensajePausa.style.display = 'block'; // Mostrar el mensaje de pausa
+                        // Detener el temporizador
+                        if (window.pauseTimer) {
+                        window.pauseTimer();
+                        }
+                }
+
+                function reanudarJuego() {
+                        juegoPausado = false;
+                        pausaButton.src = 'img/pause-icon.png'; // Cambiar el ícono para mostrar que el juego está reanudado
+                        mensajePausa.style.display = 'none'; // Ocultar el mensaje de pausa
+                        // Reiniciar el temporizador
+                        if (window.resumeTimer) {
+                                window.resumeTimer();
+                        }
+                }
 
                 cartas.forEach(carta => carta.addEventListener('click', voltearCarta));
                 cartas.forEach((carta,index) => carta.setAttribute('tabindex',index+2));
