@@ -31,7 +31,7 @@ header img {
   width: 1500px; /* Ajusta según el diseño general */
   padding: 20px 0;
   align-items: center;
-  align-content: center;  
+  align-content: center;
 }
 
 .carta {
@@ -144,4 +144,17 @@ header img {
   height: 40px;
   cursor: pointer;
   margin: 5px;
+}
+
+.mensaje-pareja {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 128, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  z-index: 1000;
 }

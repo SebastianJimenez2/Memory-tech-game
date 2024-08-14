@@ -96,6 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         primeraCarta.classList.add('matched');
                         segundaCarta.classList.add('matched');
 
+                        mostrarMensajeParejaEncontrada();
+
                         resetearTablero();
 
                         // Verificar si todas las cartas han sido emparejadas
@@ -134,6 +136,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (event.key === 'Enter') {
                                 voltearCarta.call(event.currentTarget);
                         }
+                }
+
+                function mostrarMensajeParejaEncontrada() {
+                        const mensaje = document.createElement('div');
+                        mensaje.classList.add('mensaje-pareja');
+                        mensaje.innerText = '¡Pareja encontrada!';
+                        
+                        document.body.appendChild(mensaje);
+                        setTimeout(() => {
+                                mensaje.remove();
+                        }, 2000); // El mensaje se mostrará durante 2 segundos
                 }
 
 
