@@ -361,6 +361,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                 });
 
+                cerrarPopupPareja.addEventListener('click', () => {
+                        popupPareja.style.display = 'none';
+                        if (window.resumeTimer) {
+                                window.resumeTimer();
+                        }
+                });
+
                 // Añadir el manejador de eventos para la tecla ESC
                 document.addEventListener('keydown', manejarTecla);
         }
