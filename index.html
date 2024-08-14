@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
+    <title>Memory Tech: Inicio</title>
+    <link rel="icon" href="img/iconPage.png">
     <link rel="stylesheet" href="css/globals.css" />
     <link rel="stylesheet" href="css/styleguide.css" />
     <link rel="stylesheet" href="css/index_style.css" />
@@ -15,17 +17,17 @@
             tiempo posible para obtener más puntos!
           </p>
           <div class="group">
-            <div id="opcionesBtn" class="div-wrapper">
+            <div id="opcionesBtn" class="div-wrapper button-focus" aria-label="Botón de opciones." tabindex="3" role="button" title="Botón de opciones.">
               <div class="text-wrapper-2">Opciones</div>
             </div>
           </div>
           <div class="overlap-2">
             <div class="overlap-wrapper">
-              <div id="iniciarBtn" class="div-wrapper">
-                <div class="text-wrapper-3">Iniciar</div>
+              <div id="iniciarBtn" class="div-wrapper button-focus" aria-label="Botón para iniciar." tabindex="2" role="button" onkeypress="presionarConTeclado(event, 'niveles.html')" title="Botón para iniciar.">
+                <div class="text-wrapper-3" >Iniciar</div>
               </div>
             </div>
-            <img class="screenshot" src="img/logoTechPrincipal.png" />
+            <img class="screenshot" src="img/logoTechPrincipal.png" alt="Juego Memory Tech" title="Juego Memory Tech"/>
           </div>
           <div class="sound"></div>
         </div>
@@ -36,12 +38,15 @@
             </div>
           </div>
           <div class="rectangle"></div>
-          <img class="screenshot-2" src="img/logoTechSecundario.png" />
+          <a href="index.html">
+            <img class="screenshot-2" src="img/logoTechSecundario.png" alt="Logo del juego." title="Logo del juego." tabindex="1"  />
+          </a>
         </div>
       </div>
     </div>
 
     <!-- Añadir el archivo JavaScript -->
     <script src="js/index.js"></script>
+    <script src="js/global.js"></script>
   </body>
 </html>

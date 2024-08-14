@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
+    
+    <title>Dificultad</title>
+    <link rel="icon" href="img/iconPage.png">
     <link rel="stylesheet" href="css/globals.css" />
     <link rel="stylesheet" href="css/styleguide.css" />
     <link rel="stylesheet" href="css/niveles_style.css" />
@@ -19,9 +22,15 @@
           <p class="text-wrapper-4">
             El siguiente nivel de dificultad se desloqueará de forma progesiva al superar los otros niveles
           </p>
-          <div class="group" id="principiante"><img class="image-2" src="img/nivel1.png" /></div>
-          <div class="group-2" id="intermedio"><img class="image-2" src="img/nivel2.png" /></div>
-          <div class="group-3" id="avanzado"><img class="image-2" src="img/nivel3.png" /></div>
+          <div class="group button-focus" id="principiante" tabindex="2" role="button" onkeypress="presionarConTeclado(event, 'juego.html?nivel=principiante')" title="Iniciar el juego en dificultad principiante." aria-label="Iniciar el juego en dificultad principiante." >
+            <img class="image-2" src="img/nivel1.png" aria-label="Seleccionar dificultad fácil." />
+          </div>
+          <div class="group-2 button-focus" id="intermedio"  tabindex="3" role="button" onkeypress="presionarConTeclado(event, 'juego.html?nivel=intermedio')" title="Iniciar el juego en dificultad intermedia." aria-label="Iniciar el juego en dificultad intermedia.">
+            <img class="image-2" src="img/nivel2.png" aria-label="Seleccionar dificultad intermedia."/>
+          </div>
+          <div class="group-3 button-focus" id="avanzado"  tabindex="4" role="button" onkeypress="presionarConTeclado(event, 'juego.html?nivel=avanzado')" title="Iniciar el juego en dificultad avanzada." aria-label="Iniciar el juego en dificultad avanzada." >
+            <img class="image-2" src="img/nivel3.png" aria-label="Seleccionar dificultad avanzada."/>
+          </div>
 
           <div class="sound"></div>
         </div>
@@ -32,11 +41,14 @@
             </div>
           </div>
           <div class="rectangle-3"></div>
-          <img class="screenshot" src="img/logoTechSecundario.png" />
+          <a href="index.html">
+            <img class="screenshot" src="img/logoTechSecundario.png" alt="Logo del juego." title="Logo del juego." tabindex="1" onkeypress="presionarConTeclado(event, 'index.html')" />
+          </a>
         </div>
       </div>
     </div>
 
     <script src="js/niveles.js"></script>
+    <script src="js/global.js"></script>
   </body>
 </html>

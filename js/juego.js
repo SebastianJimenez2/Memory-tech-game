@@ -130,6 +130,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
                 }
 
+                function presionarCarta(event){
+                        if (event.key === 'Enter') {
+                                voltearCarta.call(event.currentTarget);
+                        }
+                }
+
+
                 cartas.forEach(carta => carta.addEventListener('click', voltearCarta));
+                cartas.forEach((carta,index) => carta.setAttribute('tabindex',index+2));
+                cartas.forEach(carta => carta.addEventListener('keypress', presionarCarta));
         }
 });
+        

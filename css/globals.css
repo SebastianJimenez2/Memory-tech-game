@@ -16,3 +16,31 @@ button:focus-visible {
 a {
   text-decoration: none;
 }
+
+.button-focus{
+  transition: border 0.2s ease-in-out;
+}
+
+.button-focus:hover{
+  border: 4px solid #ffffff;
+  cursor: pointer;
+}
+
+.button-focus:focus{
+  border: 4px solid #FFF;
+}
+
+.button-focus-two{
+  transition: border 0.2s ease-in-out;
+}
+
+.button-focus-two:hover{
+  border-radius: 10px;
+  border: 4px solid #f78707;
+  cursor: pointer;
+}
+
+.button-focus-two:focus{
+  border: 4px solid #f78707;
+}
+

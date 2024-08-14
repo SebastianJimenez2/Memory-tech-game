@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
   <meta charset="utf-8" />
+  <title>¡Empieza el juego!</title>
+  <link rel="icon" href="img/iconPage.png">
   <link rel="stylesheet" href="css/globals.css" />
   <link rel="stylesheet" href="css/styleguide.css" />
   <link rel="stylesheet" href="css/juego_style.css" />
@@ -10,7 +11,9 @@
 
 <body>
   <header>
-    <img class="screenshot" src="img/logoTechSecundario.png" />
+    <a href="index.html">
+      <img class="screenshot" src="img/logoTechSecundario.png" alt="Logo del juego." title="Logo del juego." tabindex="1" onkeypress="presionarConTeclado(event, 'index.html')" />
+    </a>
   </header>
 
   <div class="opciones">
@@ -40,7 +43,7 @@
     <div class="popup-contenido">
       <h2>¡Felicidades!</h2>
       <p>Has encontrado todas las parejas.</p>
-      <button id="cerrar-popup">Cerrar</button>
+      <button id="cerrar-popup" class="button-focus-two" title="Cerrar pop up" tabindex="40" role="button">Cerrar</button>
     </div>
   </div>
 
@@ -48,13 +51,14 @@
   <div id="popup-tiempo-agotado" class="popup">
     <div class="popup-contenido">
       <p>¡Se acabó el tiempo!</p>
-      <button id="cerrar-popup-tiempo">Cerrar</button>
+      <button id="cerrar-popup-tiempo" class="button-focus-two" title="Cerrar pop up" tabindex="41" role="button">Cerrar</button>
     </div>
   </div>
 
   <!-- Agrega tu script al final del body -->
   <script src="js/juego.js"> </script>
   <script src="js/timer.js"> </script>
+  <script src="js/global.js"> </script>
 </body>
 
 </html>
