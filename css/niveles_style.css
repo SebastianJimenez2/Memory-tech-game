@@ -27,11 +27,10 @@ header img {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 200px;
+  gap: 135px;
 }
 
 .contenido-niveles-texto {
-  width: 693px;
   font-family: var(--titulo-1-font-family);
   font-weight: var(--titulo-1-font-weight);
   color: #000000;
@@ -43,7 +42,7 @@ header img {
 }
 
 .boton-nivel {
-  width: 237px;
+  width: 235px;
   height: 235px;
   background-color: var(--color-primario);
   border-radius: 12px;
@@ -57,13 +56,10 @@ header img {
 .image-nivel {
   width: 180px;
   height: 180px;
-  top: 27px;
-  left: 29px;
   object-fit: cover;
 }
 
 .text-wrapper {
-  height: 47px;
   font-family: var(--normal-font-family);
   font-weight: var(--normal-font-weight);
   color: #070707;
@@ -75,7 +71,7 @@ header img {
 }
 
 .text-wrapper-2 {
-  width: 1095px;
+  width: 975px;
   font-family: var(--normal-font-family);
   font-weight: var(--normal-font-weight);
   color: #000000;
