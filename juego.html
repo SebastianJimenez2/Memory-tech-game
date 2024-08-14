@@ -24,7 +24,7 @@
       <div class="botones-opciones">
         <img src="img/pause-icon.png" id="pausa" />
         <img src="img/informacion.png" id="informacion" />
-        <img src="img/reporte.png" id="reporte" />
+        <img src="img/reporte.png" id="reportar" />
         <img src="img/sound-muted-icon.png" id="sonido" />
       </div>
     </div>
@@ -60,6 +60,19 @@
     <div id="mensaje-pausa" class="mensaje-pausa" style="display: none;">
       <p>El juego está en pausa. Haz clic en el ícono de play para reanudar.</p>
     </div>
+
+    <!-- Pop up para repotar un problema -->
+  <div id="popup-reportar" class="popup">
+    <div class="popup-contenido">
+      <h2>Reportar Problema</h2>
+      <form id="form-reportar">
+        <label for="descripcion">Descripción del problema:</label>
+        <textarea id="descripcion" rows="5" required></textarea>
+        <button type="submit" class="button-focus-two">Enviar</button>
+        <button type="button" id="cerrar-reportar" class="button-focus-two">Cerrar</button>
+      </form>
+    </div>
+</div>
 
     <!-- Agrega tu script al final del body -->
     <script src="js/juego.js"> </script>

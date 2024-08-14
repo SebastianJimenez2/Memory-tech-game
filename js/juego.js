@@ -10,6 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let soundOn = false;
         let juegoPausado = false;
 
+        const botonReportar = document.getElementById('reportar');
+        const popupReportar = document.getElementById('popup-reportar');
+        const cerrarReportar = document.getElementById('cerrar-reportar');
+        const formReportar = document.getElementById('form-reportar');
+
 
         let numCartas;
         let tiempoInicial;
@@ -211,6 +216,34 @@ document.addEventListener('DOMContentLoaded', () => {
                                 window.resumeTimer();
                         }
                 }
+
+        // Mostrar el pop-up
+        botonReportar.addEventListener('click', () => {
+                popupReportar.style.display = 'flex';
+        });
+
+        // Cerrar el pop-up
+        cerrarReportar.addEventListener('click', () => {
+                popupReportar.style.display = 'none';
+        });
+
+        // Manejar el envío del formulario
+        formReportar.addEventListener('submit', (event) => {
+                event.preventDefault(); // Evitar el envío por defecto
+
+                const descripcion = document.getElementById('descripcion').value;
+
+                // Aquí puedes agregar código para guardar la información en un archivo
+                // Para un entorno real, necesitarías enviar esta información a un servidor
+
+                console.log('Descripción del problema:', descripcion);
+
+                // Limpiar el formulario y cerrar el pop-up
+                formReportar.reset();
+                popupReportar.style.display = 'none';
+
+                alert('Gracias por tu reporte. Nuestro equipo lo revisará pronto.');
+        });                
 
                 cartas.forEach(carta => carta.addEventListener('click', voltearCarta));
                 cartas.forEach((carta,index) => carta.setAttribute('tabindex',index+2));
