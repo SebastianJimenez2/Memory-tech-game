@@ -193,7 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 function cerrarTodosPopUps() {
                         popupReportar.style.display = 'none';
                         popupInfo.style.display = 'none';
-                        const popupPareja = document.getElementById('popup-pareja');
                         if (popupPareja) popupPareja.style.display = 'none';
                         const popupFelicitaciones = document.getElementById('popup-felicitaciones');
                         if (popupFelicitaciones) popupFelicitaciones.style.display = 'none';
@@ -244,7 +243,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         const popup = document.getElementById('popup-pareja');
                         const popupTitulo = document.getElementById('popup-pareja-titulo');
                         const popupMensaje = document.getElementById('popup-mensaje');
+
+                        // Asegúrate de que el popup y sus elementos estén visibles
                         popup.style.display = 'flex';
+                        popupMensaje.setAttribute('tabindex', '0'); // Asegúrate de que popupMensaje sea focoable
 
                         switch (parejaId) {
                                 case '1':
@@ -253,15 +255,15 @@ document.addEventListener('DOMContentLoaded', () => {
                                         break;
                                 case '2':
                                         popupTitulo.innerText = '¡Mouse encontrado!';
-                                        popupMensaje.innerText = '¡Perfecto! Has encontrado la pareja del mouse. Es el periférico que facilita la navegación en la interfaz gráfica.';
+                                        popupMensaje.innerText = '¡Perfecto! Has encontrado la pareja del mouse. Es el periférico que facilita la navegación en la interfaz gráfica, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
                                 case '3':
                                         popupTitulo.innerText = '¡Procesador encontrado!';
                                         popupMensaje.innerText = '¡Genial! Has encontrado la pareja del procesador. Es el cerebro de tu computadora, encargado de ejecutar instrucciones y procesar datos, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
                                 case '4':
-                                        popupTitulo.innerText = '¡Parlantes encontrados!';
-                                        popupMensaje.innerText = 'Fantástico! Has encontrado la pareja de los parlantes. Permiten que tu computadora reproduzca sonido y música, para volver al juego también puedes usar la tecla [ESC]';
+                                        popupTitulo.innerText = '¡Memoria RAM encontrada!';
+                                        popupMensaje.innerText = '¡Bien hecho! Has encontrado la pareja de la memoria RAM. Es donde se almacenan los datos temporales mientras tu computadora está en uso, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
                                 case '5':
                                         popupTitulo.innerText = '¡Auriculares encontrados!';
@@ -273,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         break;
                                 case '7':
                                         popupTitulo.innerText = '¡Micrófono encontrado!';
-                                        popupMensaje.innerText = '¡Perfecto! Has encontrado la pareja del micrófono. Es esencial para grabar voz y sonidos.';
+                                        popupMensaje.innerText = '¡Perfecto! Has encontrado la pareja del micrófono. Es esencial para grabar voz y sonidos, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
                                 case '8':
                                         popupTitulo.innerText = '¡USB encontrado!';
@@ -317,27 +319,32 @@ document.addEventListener('DOMContentLoaded', () => {
                                         break;
                         }
 
-                        popupPareja.style.display = 'flex';
-
+                        // Pausar el temporizador del juego
                         if (window.pauseTimer) {
                                 window.pauseTimer();
                         }
 
-                        cerrarPopupPareja.focus();
+                        // Establecer el foco en el popupMensaje
+                        popupMensaje.focus();
+
+                        // Añadir el evento para cerrar el popup al hacer clic en el botón de cerrar
+                        cerrarPopupPareja.addEventListener('click', () => {
+                                popup.style.display = 'none';
+                                if (window.resumeTimer) {
+                                        window.resumeTimer();
+                                }
+                        });
                 }
 
-                // Añadir los eventos de clic y teclado a las cartas
                 cartas.forEach(carta => {
                         carta.addEventListener('click', voltearCarta);
                         carta.addEventListener('keydown', presionarCarta);
                 });
 
-                // Añadir los eventos para los pop-ups
+                document.addEventListener('keydown', manejarTecla);
                 botonReportar.addEventListener('click', () => {
                         popupReportar.style.display = 'flex';
-                        if (window.pauseTimer) {
-                                window.pauseTimer();
-                        }
+                        formReportar.focus();
                 });
 
                 cerrarReportar.addEventListener('click', () => {
@@ -349,9 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 botonInfo.addEventListener('click', () => {
                         popupInfo.style.display = 'flex';
-                        if (window.pauseTimer) {
-                                window.pauseTimer();
-                        }
+                        document.getElementById('popup-info-descripcion').focus();
                 });
 
                 cerrarInfo.addEventListener('click', () => {
@@ -360,15 +365,5 @@ document.addEventListener('DOMContentLoaded', () => {
                                 window.resumeTimer();
                         }
                 });
-
-                cerrarPopupPareja.addEventListener('click', () => {
-                        popupPareja.style.display = 'none';
-                        if (window.resumeTimer) {
-                                window.resumeTimer();
-                        }
-                });
-
-                // Añadir el manejador de eventos para la tecla ESC
-                document.addEventListener('keydown', manejarTecla);
         }
 });
