@@ -256,6 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         // Asegúrate de que el popup y sus elementos estén visibles
                         popup.style.display = 'flex';
                         popupMensaje.setAttribute('tabindex', '0'); // Asegúrate de que popupMensaje sea focoable
+                        
 
                         switch (parejaId) {
                                 // Contenido del popup según parejaId
@@ -324,8 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         popupMensaje.innerText = '¡Perfecto! Has encontrado la pareja del lector de huella. Proporciona una capa adicional de seguridad al autenticar usuarios mediante sus huellas dactilares, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
                         }
-
-                        cerrarPopupPareja.focus();
+                        popupMensaje.focus();
 
                         // Pausar el temporizador cuando se muestra el popup
                         if (window.pauseTimer) {
