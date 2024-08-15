@@ -146,8 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         const todasEmparejadas = document.querySelectorAll('.carta.matched').length === numCartas;
                         if (todasEmparejadas) {
-                                alert("Felicidades, has completado el nivel")
-                                redirigirANiveles();
+                                mostrarPopup().then(() => {
+                                        redirigirANiveles(); // Redirigir cuando se cierra el popup
+                                });
                         }
                 }
 
@@ -166,20 +167,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 function mostrarPopup() {
-                        const popup = document.getElementById('popup-felicitaciones');
-                        popup.style.display = 'flex';
+                        return new Promise((resolve) => {
+                                const popup = document.getElementById('popup-felicitaciones');
+                                popup.style.display = 'flex';
 
-                        // Pausar el temporizador cuando se muestra el popup
-                        if (window.pauseTimer) {
-                                window.pauseTimer();
-                        }
-
-                        const botonCerrar = document.getElementById('cerrar-popup');
-                        botonCerrar.addEventListener('click', () => {
-                                popup.style.display = 'none';
-                                if (window.resumeTimer) {
-                                        window.resumeTimer(); // Reanudar el temporizador
+                                // Pausar el temporizador cuando se muestra el popup
+                                if (window.pauseTimer) {
+                                        window.pauseTimer();
                                 }
+
+                                const botonCerrar = document.getElementById('cerrar-popup');
+                                botonCerrar.addEventListener('click', () => {
+                                        popup.style.display = 'none';
+                                        if (window.resumeTimer) {
+                                                window.resumeTimer(); // Reanudar el temporizador
+                                        }
+                                        resolve(); // Resolver la promesa cuando se cierra el popup
+                                }, { once: true }); // Asegurarse de que el evento se maneje solo una vez
                         });
                 }
 
@@ -268,8 +272,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                         popupMensaje.innerText = '¡Genial! Has encontrado la pareja del procesador. Es el cerebro de tu computadora, encargado de ejecutar instrucciones y procesar datos, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
                                 case '4':
-                                        popupTitulo.innerText = '¡Memoria RAM encontrada!';
-                                        popupMensaje.innerText = '¡Bien hecho! Has encontrado la pareja de la memoria RAM. Es donde se almacenan los datos temporales mientras tu computadora está en uso, para volver al juego también puedes usar la tecla [ESC]';
+                                        popupTitulo.innerText = '¡Parlantes encontrados!';
+                                        popupMensaje.innerText = '¡Bien hecho! Has encontrado la pareja de los parlantes. Es un dispositivo que permite escuchar el audio de la computadora, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
                                 case '5':
                                         popupTitulo.innerText = '¡Auriculares encontrados!';
