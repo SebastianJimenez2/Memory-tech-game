@@ -12,22 +12,27 @@
 
 <body>
   <header>
-    <a href="index.html">
-      <img class="screenshot" src="img/logoTechSecundario.png" alt="Logo del juego." title="Logo del juego."
-        tabindex="1" onkeypress="presionarConTeclado(event, 'index.html')" />
+    <a href="index.html" tabindex="1">
+      <img class="screenshot" src="img/logoTechSecundario.png" alt="Logo del juego." title="Logo del juego." />
     </a>
   </header>
 
   <div class="opciones">
-    <div class="timer" tabindex="2">
-      05:00
-    </div>
+    <div class="timer" id="timer" tabindex="2">05:00</div>
 
     <div class="botones-opciones">
-      <img src="img/pause-icon.png" id="pausa" />
-      <img src="img/informacion.png" id="informacion" />
-      <img src="img/reporte.png" id="reportar" />
-      <img src="img/sound-muted-icon.png" id="sonido" />
+      <button id="pausa" tabindex="3" role="button" aria-label="Pausar/Reanudar juego">
+        <img src="img/pause-icon.png" alt="Pausa/Play" />
+      </button>
+      <button id="informacion" tabindex="4" role="button" aria-label="Mostrar información del juego">
+        <img src="img/informacion.png" alt="Información" />
+      </button>
+      <button id="reportar" tabindex="5" role="button" aria-label="Reportar problema">
+        <img src="img/reporte.png" alt="Reportar" />
+      </button>
+      <button id="sonido" tabindex="6" role="button" aria-label="Activar/Desactivar sonido">
+        <img src="img/sound-muted-icon.png" alt="Sonido" />
+      </button>
     </div>
   </div>
 
@@ -35,22 +40,19 @@
     <!-- pantalla para la visualizacion de cartas -->
     <div class="cartas-grid" id="cartas-grid">
       <!-- Las cartas estarán dentro de este contenedor -->
-
     </div>
   </div>
 
-
-
   <!-- Mensaje de pausa -->
-  <div id="mensaje-pausa" class="mensaje-pausa" style="display: none;">
+  <div id="mensaje-pausa" class="mensaje-pausa" style="display: none;" role="alert" aria-live="assertive">
     <p>El juego está en pausa. Haz clic en el ícono de play para reanudar.</p>
   </div>
 
   <!-- Pop-up para felicitar -->
-  <div id="popup-felicitaciones" class="popup">
+  <div id="popup-felicitaciones" class="popup" role="dialog" aria-labelledby="popup-felicitaciones-titulo" aria-describedby="popup-felicitaciones-texto" style="display: none;">
     <div class="popup-contenido">
-      <h2>¡Felicidades!</h2>
-      <div class="popup-contenido-texto"> 
+      <h2 id="popup-felicitaciones-titulo">¡Felicidades!</h2>
+      <div class="popup-contenido-texto" id="popup-felicitaciones-texto">
         <p>Has encontrado todas las parejas.</p>
       </div>
       <button id="cerrar-popup" class="button-focus-two" title="Cerrar pop up" tabindex="40" role="button">Cerrar</button>
@@ -58,24 +60,23 @@
   </div>
 
   <!-- Pop-up para mostrar cuando el tiempo se haya agotado -->
-  <div id="popup-tiempo-agotado" class="popup">
+  <div id="popup-tiempo-agotado" class="popup" role="dialog" aria-labelledby="popup-tiempo-agotado-titulo" aria-describedby="popup-tiempo-agotado-texto" style="display: none;">
     <div class="popup-contenido">
-      <h2>¡Tiempo Agotado!</h2>
-      <div class="popup-contenido-texto"> 
-        <p>¡Se acabó el tiempo! Pero no te preocupes, puedes volver a intentarlo</p>
+      <h2 id="popup-tiempo-agotado-titulo">¡Tiempo Agotado!</h2>
+      <div class="popup-contenido-texto" id="popup-tiempo-agotado-texto">
+        <p>¡Se acabó el tiempo! Pero no te preocupes, puedes volver a intentarlo.</p>
       </div>
-      <button id="cerrar-popup-tiempo" class="button-focus-two" title="Cerrar pop up" tabindex="41"
-        role="button">Cerrar</button>
+      <button id="cerrar-popup-tiempo" class="button-focus-two" title="Cerrar pop up" tabindex="41" role="button">Cerrar</button>
     </div>
   </div>
 
-  <!-- Pop up para repotar un problema -->
-  <div id="popup-reportar" class="popup">
+  <!-- Pop up para reportar un problema -->
+  <div id="popup-reportar" class="popup" role="dialog" aria-labelledby="popup-reportar-titulo" aria-describedby="popup-reportar-formulario" style="display: none;">
     <div class="popup-contenido">
-      <h2>Reportar Problema</h2>
-      <form id="form-reportar">
+      <h2 id="popup-reportar-titulo">Reportar Problema</h2>
+      <form id="form-reportar" aria-labelledby="popup-reportar-titulo">
         <label for="descripcion">Descripción del problema:</label>
-        <textarea id="descripcion" rows="5" required></textarea>
+        <textarea id="descripcion" rows="5" required aria-required="true"></textarea>
         <button type="submit" class="button-focus-two">Enviar</button>
         <button type="button" id="cerrar-reportar" class="button-focus-two">Cerrar</button>
       </form>
@@ -83,34 +84,30 @@
   </div>
 
   <!-- Pop-up para mostrar información del juego -->
-  <div id="popup-info" class="popup">
+  <div id="popup-info" class="popup" role="dialog" aria-labelledby="popup-info-titulo" aria-describedby="popup-info-texto" style="display: none;">
     <div class="popup-contenido">
-      <h2>Información del Juego</h2>
-      <div class="popup-contenido-texto"> 
-        <p>Este es un juego de memoria en el que debes encontrar parejas de cartas. Cada vez que encuentres una pareja
-          correcta, se te mostrará un mensaje. Tienes un tiempo limitado para encontrar todas las parejas. ¡Buena suerte!
-        </p>
+      <h2 id="popup-info-titulo">Información del Juego</h2>
+      <div class="popup-contenido-texto" id="popup-info-texto">
+        <p>Este es un juego de memoria en el que debes encontrar parejas de cartas. Cada vez que encuentres una pareja correcta, se te mostrará un mensaje. Tienes un tiempo limitado para encontrar todas las parejas. ¡Buena suerte!</p>
       </div>
       <button id="cerrar-info" class="button-focus-two" title="Cerrar pop up" role="button">Cerrar</button>
     </div>
   </div>
 
   <!-- Pop-up para mostrar la retroalimentación de las parejas -->
-  <div id="popup-pareja" class="popup">
+  <div id="popup-pareja" class="popup" role="dialog" aria-labelledby="popup-pareja-titulo" aria-describedby="popup-pareja-texto" style="display: none;">
     <div class="popup-contenido">
-      <h2 id="popup-titulo">¡Pareja Encontrada!</h2>
-      <div class="popup-contenido-texto"> 
-        <p id="popup-mensaje">¡Bien hecho!</p>  
+      <h2 id="popup-pareja-titulo">¡Pareja Encontrada!</h2>
+      <div class="popup-contenido-texto" id="popup-pareja-texto">
+        <p id="popup-mensaje">¡Bien hecho!</p>
       </div>
-      <button id="cerrar-popup-pareja" class="button-focus-two" title="Cerrar pop up" tabindex="42"
-        role="button">Cerrar</button>
+      <button id="cerrar-popup-pareja" class="button-focus-two" title="Cerrar pop up" tabindex="42" role="button">Cerrar</button>
     </div>
   </div>
 
-  <!-- Agrega tu script al final del body -->
-  <script src="js/juego.js"> </script>
-  <script src="js/timer.js"> </script>
-  <script src="js/global.js"> </script>
+  <script src="js/juego.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/global.js"></script>
 
   <!-- Agrega los elementos de audio -->
   <audio id="bg-music" loop>

@@ -19,9 +19,25 @@ header img {
   background-color: var(--color-cuaternario);
 }
 
-.botones-opciones img {
-  height: 40px;
+.botones-opciones button {
+  background: transparent; 
+  border: none; 
+  padding: 0; 
+  cursor: pointer; 
+  margin: 5px; 
 }
+
+.botones-opciones img {
+  width: 40%; 
+  height: 40%; 
+  display: block; 
+}
+
+.botones-opciones button:focus {
+  outline: 2px solid var(--color-primario); 
+  outline-offset: 2px; 
+}
+
 
 .cartas-grid {
   display: flex; /* Cambia el contenedor a flexbox */
