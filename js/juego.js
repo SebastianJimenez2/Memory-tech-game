@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let numCartas;
         let tiempoInicial;
+        let temporizador;
 
         switch (nivel) {
                 case 'principiante':
@@ -145,7 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         const todasEmparejadas = document.querySelectorAll('.carta.matched').length === numCartas;
                         if (todasEmparejadas) {
-                                mostrarPopup();
+                                alert("Felicidades, has completado el nivel")
+                                redirigirANiveles();
                         }
                 }
 
@@ -167,8 +169,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         const popup = document.getElementById('popup-felicitaciones');
                         popup.style.display = 'flex';
 
+                        // Pausar el temporizador cuando se muestra el popup
                         if (window.pauseTimer) {
-                                window.pauseTimer(); // Pausar el temporizador
+                                window.pauseTimer();
                         }
 
                         const botonCerrar = document.getElementById('cerrar-popup');
@@ -251,6 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         popupMensaje.setAttribute('tabindex', '0'); // Asegúrate de que popupMensaje sea focoable
 
                         switch (parejaId) {
+                                // Contenido del popup según parejaId
                                 case '1':
                                         popupTitulo.innerText = '¡Teclado encontrado!';
                                         popupMensaje.innerText = '¡Buen trabajo! Has encontrado la pareja del teclado. Es el dispositivo que utilizas para escribir en tu computadora, para volver al juego también puedes usar la tecla [ESC]';
@@ -317,15 +321,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                         break;
                         }
 
-                        // Pausar el temporizador del juego
+                        cerrarPopupPareja.focus();
+
+                        // Pausar el temporizador cuando se muestra el popup
                         if (window.pauseTimer) {
                                 window.pauseTimer();
                         }
 
-                        // Establecer el foco en el popupMensaje
-                        popupMensaje.focus();
-
-                        // Añadir el evento para cerrar el popup al hacer clic en el botón de cerrar
                         cerrarPopupPareja.addEventListener('click', () => {
                                 popup.style.display = 'none';
                                 if (window.resumeTimer) {
@@ -336,17 +338,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 cartas.forEach(carta => {
                         carta.addEventListener('click', voltearCarta);
-                        carta.addEventListener('keydown', presionarCarta);
+                        carta.addEventListener('keypress', presionarCarta);
                 });
 
                 document.addEventListener('keydown', manejarTecla);
 
                 botonReportar.addEventListener('click', () => {
                         popupReportar.style.display = 'flex';
-                        formReportar.focus();
                         if (window.pauseTimer) {
                                 window.pauseTimer(); // Pausar el temporizador
                         }
+                        formReportar.focus();
                 });
 
                 cerrarReportar.addEventListener('click', () => {
@@ -361,6 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (window.pauseTimer) {
                                 window.pauseTimer(); // Pausar el temporizador
                         }
+                        popupInfo.focus();
                 });
 
                 cerrarInfo.addEventListener('click', () => {
@@ -372,7 +375,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 formReportar.addEventListener('submit', (event) => {
                         event.preventDefault();
+                        alert("Nuestro equipo revisará la información, muchas gracias por tu ayuda")
                         window.location.href = 'niveles.html';
                 });
+        }
+
+        function redirigirANiveles() {
+                window.location.href = 'niveles.html';
         }
 });
