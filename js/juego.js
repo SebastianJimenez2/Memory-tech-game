@@ -168,13 +168,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         popup.style.display = 'flex';
 
                         if (window.pauseTimer) {
-                                window.pauseTimer();
+                                window.pauseTimer(); // Pausar el temporizador
                         }
 
                         const botonCerrar = document.getElementById('cerrar-popup');
                         botonCerrar.addEventListener('click', () => {
                                 popup.style.display = 'none';
-                                window.location.href = 'niveles.html';
+                                if (window.resumeTimer) {
+                                        window.resumeTimer(); // Reanudar el temporizador
+                                }
                         });
                 }
 
@@ -198,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (popupFelicitaciones) popupFelicitaciones.style.display = 'none';
 
                         if (window.resumeTimer) {
-                                window.resumeTimer();
+                                window.resumeTimer(); // Reanudar el temporizador
                         }
                 }
 
@@ -226,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         pausaButton.querySelector('img').src = 'img/play-icon.png'; // Cambia el ícono a play (pausado)
                         mensajePausa.style.display = 'block';
                         if (window.pauseTimer) {
-                                window.pauseTimer();
+                                window.pauseTimer(); // Pausar el temporizador
                         }
                 }
 
@@ -235,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         pausaButton.querySelector('img').src = 'img/pause-icon.png'; // Cambia el ícono a pausa (reanudar)
                         mensajePausa.style.display = 'none';
                         if (window.resumeTimer) {
-                                window.resumeTimer();
+                                window.resumeTimer(); // Reanudar el temporizador
                         }
                 }
 
@@ -257,7 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                         popupTitulo.innerText = '¡Ratón encontrado!';
                                         popupMensaje.innerText = '¡Excelente! Has encontrado la pareja del ratón. Es el dispositivo que utilizas para mover el cursor en tu computadora, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
-                                // Agrega más casos según sea necesario
                                 case '3':
                                         popupTitulo.innerText = '¡Procesador encontrado!';
                                         popupMensaje.innerText = '¡Genial! Has encontrado la pareja del procesador. Es el cerebro de tu computadora, encargado de ejecutar instrucciones y procesar datos, para volver al juego también puedes usar la tecla [ESC]';
@@ -314,10 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                         popupTitulo.innerText = '¡Lector de huella encontrado!';
                                         popupMensaje.innerText = '¡Perfecto! Has encontrado la pareja del lector de huella. Proporciona una capa adicional de seguridad al autenticar usuarios mediante sus huellas dactilares, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
-                                default:
-                                        popupTitulo.innerText = '¡Pareja Encontrada!';
-                                        popupMensaje.innerText = '¡Buen trabajo! Has encontrado una pareja.';
-                                        break;
                         }
 
                         // Pausar el temporizador del juego
@@ -332,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         cerrarPopupPareja.addEventListener('click', () => {
                                 popup.style.display = 'none';
                                 if (window.resumeTimer) {
-                                        window.resumeTimer();
+                                        window.resumeTimer(); // Reanudar el temporizador
                                 }
                         });
                 }
@@ -343,28 +340,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 document.addEventListener('keydown', manejarTecla);
+
                 botonReportar.addEventListener('click', () => {
                         popupReportar.style.display = 'flex';
                         formReportar.focus();
+                        if (window.pauseTimer) {
+                                window.pauseTimer(); // Pausar el temporizador
+                        }
                 });
 
                 cerrarReportar.addEventListener('click', () => {
                         popupReportar.style.display = 'none';
                         if (window.resumeTimer) {
-                                window.resumeTimer();
+                                window.resumeTimer(); // Reanudar el temporizador
                         }
                 });
 
                 botonInfo.addEventListener('click', () => {
                         popupInfo.style.display = 'flex';
-                        document.getElementById('popup-info-descripcion').focus();
+                        if (window.pauseTimer) {
+                                window.pauseTimer(); // Pausar el temporizador
+                        }
                 });
 
                 cerrarInfo.addEventListener('click', () => {
                         popupInfo.style.display = 'none';
                         if (window.resumeTimer) {
-                                window.resumeTimer();
+                                window.resumeTimer(); // Reanudar el temporizador
                         }
+                });
+
+                formReportar.addEventListener('submit', (event) => {
+                        event.preventDefault();
+                        window.location.href = 'niveles.html';
                 });
         }
 });
