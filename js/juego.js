@@ -254,9 +254,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                         popupMensaje.innerText = '¡Buen trabajo! Has encontrado la pareja del teclado. Es el dispositivo que utilizas para escribir en tu computadora, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
                                 case '2':
-                                        popupTitulo.innerText = '¡Mouse encontrado!';
-                                        popupMensaje.innerText = '¡Perfecto! Has encontrado la pareja del mouse. Es el periférico que facilita la navegación en la interfaz gráfica, para volver al juego también puedes usar la tecla [ESC]';
+                                        popupTitulo.innerText = '¡Ratón encontrado!';
+                                        popupMensaje.innerText = '¡Excelente! Has encontrado la pareja del ratón. Es el dispositivo que utilizas para mover el cursor en tu computadora, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
+                                // Agrega más casos según sea necesario
                                 case '3':
                                         popupTitulo.innerText = '¡Procesador encontrado!';
                                         popupMensaje.innerText = '¡Genial! Has encontrado la pareja del procesador. Es el cerebro de tu computadora, encargado de ejecutar instrucciones y procesar datos, para volver al juego también puedes usar la tecla [ESC]';
@@ -286,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         popupMensaje.innerText = '¡Fantástico! Has encontrado la pareja de la placa madre. Es el componente principal que conecta todos los demás elementos de la computadora, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
                                 case '10':
-                                        popupTitulo.innerText = '¡Impresora encontrado!';
+                                        popupTitulo.innerText = '¡Impresora encontrada!';
                                         popupMensaje.innerText = '¡Genial! Has encontrado la pareja de la impresora. Permite que tu computadora imprima documentos y fotos en papel, para volver al juego también puedes usar la tecla [ESC]';
                                         break;
                                 case '11':
